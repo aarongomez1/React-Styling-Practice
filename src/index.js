@@ -14,9 +14,10 @@ const evening = "Good Evening";
 
 var colorStyle = { color: "red" };
 
-var dateTime = new Date(2020, 8, 31, 19, 0, 0);
-var message = morning;
-var currHour = dateTime.getHours();
+const dateTime = new Date(2020, 8, 31, 12, 0, 0);
+let message = morning;
+const currHour = dateTime.getHours();
+console.log(currHour);
 if (currHour >= 12 && currHour < 18) {
   message = afternoon;
   colorStyle.color = "green";
@@ -27,7 +28,9 @@ if (currHour >= 12 && currHour < 18) {
 
 ReactDOM.render(
   <div>
-    <h1 style={colorStyle}>{message}</h1>
+    <h1 className="heading" style={colorStyle}>
+      {message}
+    </h1>
   </div>,
   document.getElementById("root")
 );
